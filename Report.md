@@ -17,6 +17,6 @@ controlling the buffer size (i.e. experience replay).
 The following plots both the per episode score and the 100 episode moving
 average:
 
-![alt Plot]('scores.png')
+![alt Plot](scores.png)
 
 The final average score was 13.52

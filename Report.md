@@ -12,6 +12,21 @@ using a weighting hyper parameter TAU rather than a sudden update.  It also
 uses a buffer of experiences for learning with another hyper parameter
 controlling the buffer size (i.e. experience replay).
 
+Current hyper parameters:
+```python
+BUFFER_SIZE = int(1e5)  # replay buffer size
+BATCH_SIZE = 64         # minibatch size
+GAMMA = 0.99            # discount factor
+TAU = 1e-3              # for soft update of target parameters
+LR = 5e-5               # learning rate
+UPDATE_EVERY = 4        # how often to update the network
+EPSILON_START = 1       # Epsilon params used in eps-greedy policy
+EPSILON_DECAY = 0.995
+EPSILON_MIN = 0.1
+```
+
+The underlying fully connected network uses 128 and 64 node hidden layers.
+
 ### Training
 
 The following plots both the per episode score and the 100 episode moving

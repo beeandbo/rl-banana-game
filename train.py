@@ -39,11 +39,12 @@ def main():
     parser.add_argument("--min_score", type=float, help="Only save the model if the it achieves this score", default=13.)
     parser.add_argument("--epsilon", type=float, help="Starting epsilon", default=1.)
     parser.add_argument("--saveplot", help="Location to save plot of scores")
+    parser.add_argument("--environment", help="Path to Unity environment for game (i.e. Banana.App)", default="./Banana.app")
 
 
     args = parser.parse_args()
 
-    env = UnityEnvironment(file_name="./Banana.app")
+    env = UnityEnvironment(file_name=args.environment)
     brain_name = env.brain_names[0]
     brain = env.brains[brain_name]
 

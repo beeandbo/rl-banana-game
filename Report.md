@@ -20,3 +20,20 @@ average:
 ![alt Plot](scores.png)
 
 The final average score was 13.52
+
+### Ideas for improvement
+
+There are multiple strategies for improving on the original Deep Q network
+algorithm.  Some possibilities:
+
+* Double DQN - Use one network for finding the argmax at a particular state,
+  then convert that state into a value (i.e. argmax -> max) using a second
+  network.  With two networks, the algorithm should be less prone to
+  overestimation of q values due to random noise.
+* Prioritized Experience Replay - Rather than randomly sampling from the
+  experience buffer during learning, instead weight samples based on the
+  expected information they contain.  We estimate the information content of a
+  sample using the divergence of the estimated reward vs the actual reward.
+* Dueling DQN - Have separate nerworks for estimating the advantage function
+  (i.e. the optimal action) and the value function.  Then combine the output
+  of these networks into the final q-value estimation.

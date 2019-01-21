@@ -22,8 +22,13 @@ The task is episodic, and in order to solve the environment, your agent must get
 
 ### Dependencies
 
-Directions for installing dependencies can be found at: 
+Directions for installing dependencies can be found at:
 https://github.com/udacity/deep-reinforcement-learning#dependencies
+
+You'll also need to clone the above project, change into the python directory,
+and install the dependencies:
+
+`pip install -e .`
 
 ### Getting Started
 
@@ -43,7 +48,7 @@ https://github.com/udacity/deep-reinforcement-learning#dependencies
 
 To train the agent, you should run train.py.  For example:
 
-`python train.py --saveto checkpoint2.pth --episodes 1000 --epsilon 0.1 --saveplot scores2.png`
+`python train.py --saveto checkpoint.pth --episodes 1000 --epsilon 0.1 --environment <Env installed above> --saveplot scores.png`
 
 To watch a trained agent, you can use eval.py:
 

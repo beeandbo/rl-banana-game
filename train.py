@@ -57,12 +57,10 @@ def main():
     state = env_info.vector_observations[0]
     state_size = len(state)
 
-
-    #_agent = agent.Agent(state_size, action_size, seed=time.time())
-    _agent = agent.Agent(state_size, action_size, seed=0, epsilon_start=args.epsilon)
+    _agent = agent.Agent(state_size, action_size, seed=time.time(), epsilon_start=args.epsilon)
     if args.loadfrom:
         _agent.load(args.loadfrom)
-        print("Loaded")
+        print("Loaded checkpoint: %s" % (args.loadfrom,))
     _coach = coach.Coach(_agent, env)
 
     scores = _coach.run_episodes(episodes=args.episodes, train=True)
